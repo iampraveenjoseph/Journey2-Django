@@ -1,0 +1,53 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="{%static 'styles/style.css'%}">
+</head>
+<body style="background-image:url({% static 'images/bg.jpg' %})"></body>>
+    <div class="login-box">
+        <h1>Register For Journey2</h1>
+        
+            <form action="register" method="post">
+                {%csrf_token%}
+                <div class="textbox">
+                    <i class="fas fa-user" style="color: black;"></i>
+                    <input type="text" name='first_name'placeholder="First Name" required><br>
+                </div>
+                <div class="textbox">
+                    <i class="fas fa-user" style="color: black;"></i>
+                    <input type="text" name='last_name'placeholder="Last Name" required><br>
+                </div>
+
+                <div class="textbox">
+                    <i class="fa fa-id-badge" style="color: black;"></i>
+                    <input type="text" name='username'placeholder=" Userame" required><br>
+                </div>    
+
+                <div class="textbox">
+                    <i class="fas fa-mail-bulk" style="color: black;"></i>    
+                    <input type="text" name='email'placeholder="Email" required><br>
+                </div>
+                <div class="textbox">
+                    <i class="fas fa-lock" style="color: black;"></i>
+                    <input type="password" name='password1'placeholder="Password" required><br>
+                </div>
+                <div class="textbox">
+                        <i class="fas fa-lock" style="color: black;"></i>
+                    <input type="password" name='password2'placeholder="Conform Password" required><br>
+                </div> 
+                    <input class="btn" type="submit">
+                    
+
+                    <h4 style="color: crimson;">{{mes}}</h4>  
+            </form>
+            <form action="login">
+                <input type="submit" value="Login" class="btn">
+            </form>
+          
+    </div>    
+    
+</body>
+</html>
